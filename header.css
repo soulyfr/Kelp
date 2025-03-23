@@ -1,0 +1,130 @@
+.secleft {
+    width: 200px;
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+    height: 100%;
+}
+.secmid {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex: 1;
+    max-width: 600px;
+    height: 100%;
+    
+}
+.secright {
+    width: 150px;
+    height: 100%;
+    margin-right: 20px;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+     
+}
+
+.search-bar {
+
+    background-color: rgba(0, 0, 0, 0.6);
+    color: rgb(231, 231, 231);
+    font-family: Roboto;
+    font-size: 16px;
+    display: block;
+    margin: auto;
+    width: 100%;
+    height: 60%;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-style: solid;
+    border-color: rgba(0, 0, 0, 0.6);
+    border-right: 0px solid rgba(0, 0, 0, 0);
+    border-width: 1px;
+    padding-left: 15px;
+    box-shadow: 0px 7px 10px rgba(0, 0, 0, 0.507);
+    transition: all 0.5s;
+}
+
+.search-bar:hover {
+    border-right: 1px solid;
+    border-color: rgb(67, 143, 57);
+    transition: border-color 0.5s;
+     
+
+}
+
+.search-bar:focus {
+    outline: none;
+    border-right: 1px solid;
+    border-color: white;
+}
+
+.search-button {
+    height: 65%;
+    width: 75px;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-style: solid;
+    border-left: 0;
+    border-width: 1px;
+    border-color: rgba(0, 0, 0, 0.6);
+    box-shadow: 0px 7px 10px rgba(0, 0, 0, 0.507);
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    padding-top: 5px;
+    
+}
+.search-icon {
+    height: 25px;
+}
+
+.site-icon {
+    height: 45px;
+    margin-left: 5px;
+}
+
+.new-review-button {
+
+    width: 150px;
+    height: 45px;
+    border: none;
+    border-radius: 3%;
+    background-color: rgb(10, 112, 18);
+    color:rgb(240, 240, 240);
+    text-align: center;
+    line-height: 45px;
+    font-weight: bold;
+    font-size: 14px;
+    text-decoration: none;
+    box-shadow: 0px 8px 10px rgba(0, 0, 0, 0.336);
+    transition: 0.2s;
+}
+
+.new-review-button:hover {
+    background-color: rgb(13, 168, 21);
+    transition: 0.2s;
+}
+
+.menu-button {
+    height: 30px;
+    width: 30px;
+    margin-right: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+
+
+::placeholder {
+    color: rgb(121, 121, 121);
+    font-family: 'Nunito Sans';
+    transition: all 0.5s;
+}
+
+::placeholder:hover {
+    color: white;
+    transition: all 0.5s;
+}

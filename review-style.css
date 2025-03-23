@@ -1,0 +1,215 @@
+body {
+    padding: 0%;
+    margin: 0%;
+    background-color: rgb(24, 24, 24);
+    font-family: "Nunito Sans";
+    color: white;
+    display: flex;
+    justify-content: center;
+}
+
+h1 {
+    text-align: center;
+    padding-top: 20px;
+}
+
+.page-title {
+    font-weight: bold;
+}
+label {
+    color: white;
+}
+
+.submit-form {
+    width: 95%;
+    max-width: 900px;
+    height: 850px;
+    left: 25%;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: baseline;
+    gap: 20px;
+}
+
+.writables {
+    display: flex;
+    justify-content: end;
+    align-items: end;
+    width: 80%;
+    height: 5%;
+}
+
+.writable {
+    width: 30%;
+    max-width: 200px;
+    height: 30px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    border-style: none;
+    border-width: 1px;
+    font-size: 17px;
+    font-family: 'Nunito Sans';
+    color: white;
+    padding: 5px;
+    border-left: 1px solid rgb(83, 82, 82);
+    transition: 0.3s;
+}
+
+.writable:focus {
+    border-color: white;
+    transition: 0.3s;
+}
+
+
+
+.review-text {
+    width: 80%;
+    height: 65%;
+    
+}
+
+textarea {
+    width: 100%;
+    height: 90%;
+    padding: 15px;
+    font-size: 17px;
+    font-family: 'Nunito Sans';
+    color: white;
+    background-color: transparent;
+    resize: none;
+    border-radius: 5px;
+    outline: none;
+    transition: 0.3s;
+
+}
+
+textarea:focus {
+    transition: 1s;
+    border-color: white;
+}
+
+.buttonables {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: baseline;
+    width: 90%;
+    height: 10%;
+    gap: 15px;
+}
+
+.image-upload {
+    width: 145px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 15px;
+    margin-right: 15px;
+}
+
+.image-upload input {
+    display: none;
+    width: 100%;
+}
+
+.upload-button {
+    width: 145px;
+    height: 50px;
+    background-color: rgb(60, 15, 131);
+    border-radius: 5px;
+    line-height: 50px;
+    text-align: center;
+    box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.425);
+
+}
+
+.upload-button:hover {
+    cursor: pointer;
+    background-color: rgb(87, 20, 163);
+}
+
+.submit-button {
+    height: 60px;
+    width: 170px;
+    background-color: rgb(15, 131, 25);
+    border-style: none;
+    border-radius: 5px;
+    font-size: 15px;
+    font-family: 'Nunito Sans';
+    /* font-weight: bold; */
+    color: white;
+    box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.425);
+}
+.submit-button:hover{
+    background-color: rgb(13, 168, 21);
+    cursor: pointer;
+}
+
+
+
+select {
+    height: 40px;
+    background-color: transparent;
+    color: white;
+    font-family: 'Nunito Sans';
+    border: none !important;
+    border-style: none;
+    border-width: 0px;
+    outline: none;
+    font-size: 17px;
+}
+
+option {
+    background-color: rgb(15, 15, 15);
+}
+
+
+
+img {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 50px;
+    height: 50px;
+}
+
+p {
+    position: absolute;
+    top: 10px;
+    left: 70px;
+}
+
+
+/* Hide the default radio button */
+input[type="radio"] {
+    display: none;
+}
+/* Create a custom star using the text content */
+.radio-label {
+    position: relative;
+    cursor: pointer;
+    font-size: 25px;
+}
+
+/* Change the color for the selected stars */
+input[type="radio"]:checked ~ .radio-label {
+    color: gold; /* Selected star color */
+}
+
+/* Highlight stars before the selected one using adjacent sibling selector */
+input[type="radio"]:checked ~ .radio-label {
+    color: gold; /* Fill in stars up to selected one */
+}
+
+.radio-label:hover, .radio-label:hover ~ .radio-label{
+    color: #f8d74e;  
+}
+.radio-label:hover, .radio-label:hover ~ .radio-label{
+    color: #f8d74e;  
+}
+
+::placeholder {
+    color: rgb(167, 167, 167);
+}
