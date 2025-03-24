@@ -28,9 +28,7 @@ $sql = "CREATE TABLE IF NOT EXISTS reviews (
     image VARCHAR(255) NULL
 )";
 
-if ($connection->query($sql) === TRUE) {
-    echo "Table 'reviews' created successfully.";
-} else {
+if ($connection->query($sql) === FALSE) {
     echo "Error creating table: " . $connection->error;
 }
 

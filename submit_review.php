@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 include 'db.php';
 
 $errors = []; 
@@ -66,7 +66,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             'id' => $connection->insert_id, 
             'service' => $service,
             'title' => $title,
-            'user' => $username,
+            'user' => $user,
             'text' => $review,
             'category' => $category,
             'stars' => $stars,
@@ -76,7 +76,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $_SESSION['reviews'][] = $newReview;
 
       
-        header("Location: /webprogbeadando/index.php");
+        header("Location: /");
         exit();
     }
 }
@@ -99,6 +99,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </ul>
     <?php endif; ?>
 
-    <a href="/webprogbeadando/index.php">Return to homepage</a>
+    <a href="/">Return to homepage</a>
 </body>
 </html>

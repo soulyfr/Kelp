@@ -17,7 +17,7 @@
 </head>
 <body>
     
-<a class="site-icon" href="/webprogbeadando">
+<a class="site-icon" href="/">
     <img src="logo3.png" alt="" style="height: 45px;">
 </a>
 <p class="page-title" style="font-size: 20px; margin-top: 10px;">Kelp</p>

@@ -1,3 +1,7 @@
+<?php 
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -33,8 +37,11 @@
         }
         $connection->close();
     }
+    $posts = [];
 
+    if(isset($_SESSION['reviews'])){
     $posts = $_SESSION['reviews'];
+    } 
 
     if(isset($_GET['category'])) {
         $category = $_GET['category'];
@@ -63,7 +70,7 @@
     <div class="menus">
         <div class="topbar">
         <div class="secleft">
-          <a class="site-icon" href="/webprogbeadando">
+          <a class="site-icon" href="/">
             <img src="logo3.png" alt="" style="height: 100%;">
           </a>
           <p class="page-title" style="font-size : 20px; font-weight: bold;"> Kelp</p>
@@ -77,7 +84,7 @@
       </div>
         
       <div class="secright">
-        <a class="new-review-button" href="/webprogbeadando/write-review.php">Write a review</a>
+        <a class="new-review-button" href="/write-review.php">Write a review</a>
       </div>
         </div>
     </div>
