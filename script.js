@@ -10,6 +10,17 @@ const browsing = new URLSearchParams(window.location.search).get('browsing') ===
 
 const searchBar = document.querySelector('.search-bar');
 
+const logInBox = document.querySelector('.auth-box');
+const logInButton = document.querySelector('.auth-button.login');
+const closeLogin = document.querySelector('.close-button');
+
+logInButton.addEventListener('click', () => {
+    logInBox.classList.add('active');
+});
+
+closeLogin.addEventListener('click', () => {
+    logInBox.classList.remove('active');
+});
 
 window.addEventListener('beforeunload', () => {
     localStorage.setItem('scrollPosition', window.scrollY);

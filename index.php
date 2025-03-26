@@ -9,6 +9,7 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="auth.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -25,12 +26,18 @@ session_start();
 
     include 'db.php';
 
+    if(isset($_SESSION['error'])) {
+
+        echo "<script>alert('" . $_SESSION['error'] . "')</script>";
+        unset($_SESSION['error']);
+    }
+
     if(!isset($_SESSION['reviews'])) {
-        $queryAll = 'SELECT * FROM reviews';
+        $queryAll = 'SELECT * FROM reviews_auth';
         $reviewsAll = $connection->query($queryAll); 
     
     
-        if($reviewsAll->num_rows > 1){
+        if($reviewsAll->num_rows > 0){
             while($row = $reviewsAll->fetch_assoc()) {
                 $_SESSION['reviews'][] = $row;
             }
@@ -63,7 +70,16 @@ session_start();
 
     $currentPagePosts = array_slice($posts , $offset, 4);
     ?>
-
+    <div class="auth-box">
+        <p class="auth-message">Log in / Sign up</p>
+        <form action="auth.php" method="POST" class="auth-form">
+        <img src="close-button.svg" class="close-button">
+        <input type="text" name="username" placeholder="Username" minlength="5" maxlength="20" required><br>
+        <input type="password" name="password" placeholder="Password" minlength="8" maxlength="20" required><br>
+        <button type="submit" name="action" value="login" class="login-button">Login</button>
+        <button type="submit" name="action" value="signup" class="signup-button">Sign Up</button>
+    </form>
+    </div>
     <div class="post-display">
         <div class="displayed-post"></div>
     </div>
@@ -84,7 +100,16 @@ session_start();
       </div>
         
       <div class="secright">
-        <a class="new-review-button" href="/write-review.php">Write a review</a>
+        <?php 
+        
+        if(isset($_GET['login']) && $_GET['login'] == true) {
+            echo '<a class="new-review-button" href="write-review.php">Write a review</a>';
+            echo '<a class="auth-button logout" href="logout.php">Log out</a>';
+        } else {
+            echo '<button class="auth-button login">Log in</button>';
+        }
+        
+        ?>
       </div>
         </div>
     </div>

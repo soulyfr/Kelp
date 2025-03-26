@@ -2,6 +2,12 @@
 session_start();
 include 'db.php';
 
+if (!isset($_SESSION['user_id'])) {
+    $_SESSION['error'] = "You must be logged in to submit a review.";
+    header("Location: index.php"); 
+    exit();
+}
+
 $errors = []; 
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -34,7 +40,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $review = htmlspecialchars($_POST['review'], ENT_QUOTES, 'UTF-8');
         $category = htmlspecialchars($_POST['category']);
         $stars = intval($_POST['stars']);
-
+        $user_id = $_SESSION['user_id'];
  
         $imagePath = null;
         if (isset($_FILES['image']) && $_FILES['image']['error'] === UPLOAD_ERR_OK) {
@@ -55,8 +61,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
 
 
-        $submitQuery = $connection->prepare('INSERT INTO reviews (service, title, user, text, category, stars, image) VALUES (?, ?, ?, ?, ?, ?, ?)');
-        $submitQuery->bind_param('sssssis', $service, $title, $user, $review, $category, $stars, $imagePath);
+        $submitQuery = $connection->prepare('INSERT INTO reviews_auth (user_id, service, title, user, text, category, stars, image) VALUES (?, ?, ?, ?, ?, ?, ?, ?)');
+        $submitQuery->bind_param('isssssis', $user_id, $service, $title, $user, $review, $category, $stars, $imagePath);
 
         $submitQuery->execute();
         
