@@ -421,6 +421,11 @@ p, button, a {
     font-weight: normal;
 }
 
+.close-button:hover {
+    cursor: pointer;
+    color: rgb(97, 97, 97);
+}
+
 
 
 .footer {

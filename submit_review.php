@@ -82,7 +82,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $_SESSION['reviews'][] = $newReview;
 
       
-        header("Location: /");
+        header("Location: index.php?login=true");
         exit();
     }
 }
@@ -105,6 +105,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </ul>
     <?php endif; ?>
 
-    <a href="/">Return to homepage</a>
+    <a href="index.php?login=true">Return to homepage</a>
 </body>
 </html>

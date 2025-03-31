@@ -14,9 +14,12 @@ const logInBox = document.querySelector('.auth-box');
 const logInButton = document.querySelector('.auth-button.login');
 const closeLogin = document.querySelector('.close-button');
 
-logInButton.addEventListener('click', () => {
-    logInBox.classList.add('active');
-});
+if(logInButton != null) {
+
+    logInButton.addEventListener('click', () => {
+        logInBox.classList.add('active');
+    });
+}
 
 closeLogin.addEventListener('click', () => {
     logInBox.classList.remove('active');
